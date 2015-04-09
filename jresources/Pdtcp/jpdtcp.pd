@@ -1,0 +1,160 @@
+#N canvas 155 107 1100 612 10;
+#X obj 731 -7 scale_val;
+#X text 792 -7 <-ouvrir;
+#X obj 78 53 cnv 15 770 36 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 267 55 cnv 15 50 15 empty empty 1_veloc 3 8 1 10 -233017 -66577
+0;
+#X obj 334 55 cnv 15 50 15 empty empty 2_note 3 8 1 10 -233017 -66577
+0;
+#X obj 401 55 cnv 15 50 15 empty empty 2_veloc 3 8 1 10 -233017 -66577
+0;
+#X obj 468 55 cnv 15 50 15 empty empty 3_note 3 8 1 10 -233017 -66577
+0;
+#X obj 535 55 cnv 15 50 15 empty empty 3_veloc 3 8 1 10 -233017 -66577
+0;
+#X obj 602 55 cnv 15 50 15 empty empty lowBeta 3 8 1 10 -233017 -66577
+0;
+#X obj 669 55 cnv 15 50 15 empty empty highBeta 3 8 1 10 -233017 -66577
+0;
+#X obj 736 55 cnv 15 50 15 empty empty lowGamma 3 8 1 10 -233017 -66577
+0;
+#X obj 803 55 cnv 15 43 15 empty empty Note 0 8 1 10 -233017 -66577
+0;
+#X obj 131 73 cnv 15 50 15 empty empty signal 3 8 1 10 -233017 -66577
+0;
+#X obj 77 54 interface_sig;
+#X obj 78 73 cnv 15 50 15 empty empty compteur 3 8 1 10 -233017 -66577
+0;
+#X obj 77 21 cnv 15 770 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 77 21 liste_valeurs;
+#N canvas 99 101 336 206 loadbang 0;
+#X obj 16 13 loadbang;
+#X obj 34 39 delay 500;
+#X msg 16 65 1;
+#X msg 43 65 0;
+#X obj 17 91 s toggle1;
+#X obj 17 113 s toggle3;
+#X obj 76 91 s toggle2;
+#X obj 76 113 s toggle4;
+#X obj 17 134 s toggle5;
+#X obj 111 35 r allon;
+#X obj 170 33 r alloff;
+#X msg 233 30 \; pd dsp 1;
+#X obj 182 75 delay 1000;
+#X msg 201 116 1 3000;
+#X obj 202 139 line 1 0;
+#X obj 186 95 t b b;
+#X msg 251 115 0;
+#X obj 187 165 s mainvolume;
+#X msg 283 115 0 7000;
+#X obj 261 78 delay 2000;
+#X msg 149 115 1 2000;
+#X connect 0 0 2 0;
+#X connect 0 0 1 0;
+#X connect 0 0 11 0;
+#X connect 0 0 12 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 2 0 6 0;
+#X connect 2 0 7 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 3 0 6 0;
+#X connect 3 0 7 0;
+#X connect 3 0 8 0;
+#X connect 9 0 2 0;
+#X connect 9 0 20 0;
+#X connect 10 0 3 0;
+#X connect 10 0 19 0;
+#X connect 12 0 15 0;
+#X connect 13 0 14 0;
+#X connect 14 0 17 0;
+#X connect 15 0 13 0;
+#X connect 15 1 16 0;
+#X connect 16 0 14 0;
+#X connect 18 0 14 0;
+#X connect 19 0 18 0;
+#X connect 20 0 14 0;
+#X restore 594 -7 pd loadbang;
+#X obj 742 203 noteout;
+#X floatatom 806 159 5 0 0 0 - - -;
+#X floatatom 765 158 5 0 0 0 - - -;
+#X floatatom 729 157 5 0 0 0 - - -;
+#X text 78 483 tcp2midi : work with wavelaser.r. You can change tcp
+port : open top area. wavelaser.r will send att or med value instead
+of highgamma not finished but working. !! At startup need to increase
+velocity value to 127 !!;
+#X obj 524 505 midiformat 5;
+#X text 619 506 arg is channelnumber;
+#X msg 524 319 88 127;
+#X obj 524 539 midiout;
+#X msg 537 345 90 88;
+#X text 585 347 aftertouch/pitch pairs make poly aftertouch messages
+;
+#X text 588 373 controller val/ controller nr make control messages
+;
+#X text 578 319 pitch/velocity pairs make noteon messages;
+#X msg 550 373 70 7;
+#X floatatom 563 401 5 0 0 0 - - -;
+#X text 609 400 program change message;
+#X floatatom 572 426 5 0 0 0 - - -;
+#X text 621 422 aftertouch;
+#X floatatom 589 450 5 0 0 0 - - -;
+#X text 634 448 pitch bend;
+#X floatatom 603 476 5 0 0 0 - - -;
+#X text 648 475 channel number (wraps around like n%16);
+#X obj 199 56 cnv 15 50 15 empty empty 1_veloc 3 8 1 10 -233017 -66577
+0;
+#X obj 783 116 r hgamma;
+#X obj 725 115 r lgamma;
+#X obj 475 204 noteout;
+#X floatatom 539 160 5 0 0 0 - - -;
+#X floatatom 498 159 5 0 0 0 - - -;
+#X floatatom 462 158 5 0 0 0 - - -;
+#X obj 356 203 noteout;
+#X floatatom 420 159 5 0 0 0 - - -;
+#X floatatom 379 158 5 0 0 0 - - -;
+#X floatatom 343 157 5 0 0 0 - - -;
+#X obj 216 206 noteout;
+#X floatatom 280 162 5 0 0 0 - - -;
+#X floatatom 239 161 5 0 0 0 - - -;
+#X floatatom 203 160 5 0 0 0 - - -;
+#X obj 199 118 r att;
+#X obj 257 119 r med;
+#X obj 339 115 r delta;
+#X obj 397 116 r theta;
+#X obj 458 116 r lalpha;
+#X obj 516 117 r halpha;
+#X connect 16 0 13 0;
+#X connect 19 0 18 2;
+#X connect 20 0 18 1;
+#X connect 21 0 18 0;
+#X connect 23 0 26 0;
+#X connect 25 0 23 0;
+#X connect 27 0 23 1;
+#X connect 31 0 23 2;
+#X connect 32 0 23 3;
+#X connect 34 0 23 4;
+#X connect 36 0 23 5;
+#X connect 38 0 23 6;
+#X connect 41 0 20 0;
+#X connect 42 0 21 0;
+#X connect 44 0 43 2;
+#X connect 45 0 43 1;
+#X connect 46 0 43 0;
+#X connect 48 0 47 2;
+#X connect 49 0 47 1;
+#X connect 50 0 47 0;
+#X connect 52 0 51 2;
+#X connect 53 0 51 1;
+#X connect 54 0 51 0;
+#X connect 55 0 54 0;
+#X connect 56 0 53 0;
+#X connect 57 0 50 0;
+#X connect 58 0 49 0;
+#X connect 59 0 46 0;
+#X connect 60 0 45 0;

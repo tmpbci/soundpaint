@@ -1,0 +1,83 @@
+#N canvas 47 93 1233 631 10;
+#X obj 106 475 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-257985 -258113 -1 0 256;
+#X obj 153 475 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-258113 -257985 -1 0 256;
+#X obj 275 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-203904 -1 -1 0 256;
+#X obj 208 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-261682 -1 -1 0 256;
+#X obj 409 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262130 -1 -1 0 256;
+#X obj 342 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 543 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-203904 -1 -1 0 256;
+#X obj 476 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-232576 -1 -1 0 256;
+#X obj 676 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-261682 -1 -1 0 256;
+#X obj 610 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262130 -1 -1 0 256;
+#X obj 811 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 744 490 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-191407 -1 -1 0 256;
+#X obj 269 330 cnv 15 600 1 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 759 36 cnv 15 50 15 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 165 28 inlet;
+#X obj 165 67 route cnt sig att med dlt tht;
+#X obj 409 66 route lap hap lbt hbt lgm hgm;
+#X obj 165 112 s \$1-count;
+#X obj 193 141 s \$1-signal;
+#X obj 106 448 r \$1-count;
+#X obj 153 419 r \$1-signal;
+#X obj 466 212 s \$1-lbeta;
+#X obj 494 259 s \$1-hbeta;
+#X obj 606 447 r \$1-lbeta;
+#X obj 671 423 r \$1-hbeta;
+#X obj 810 420 r \$1-hgamma;
+#X obj 222 165 s \$1-1note;
+#X obj 250 221 s \$1-1vel;
+#X obj 279 269 s \$1-2note;
+#X obj 307 163 s \$1-2vel;
+#X obj 409 115 s \$1-3note;
+#X obj 437 164 s \$1-3vel;
+#X obj 551 114 s \$1-vel;
+#X obj 523 167 s \$1-note;
+#X obj 205 448 r \$1-1note;
+#X obj 272 419 r \$1-1vel;
+#X obj 410 420 r \$1-2vel;
+#X obj 338 444 r \$1-2note;
+#X obj 469 446 r \$1-3note;
+#X obj 544 424 r \$1-3vel;
+#X obj 737 447 r \$1-note;
+#X connect 14 0 15 0;
+#X connect 14 0 16 0;
+#X connect 15 0 17 0;
+#X connect 15 1 18 0;
+#X connect 15 2 26 0;
+#X connect 15 3 27 0;
+#X connect 15 4 28 0;
+#X connect 15 5 29 0;
+#X connect 16 0 30 0;
+#X connect 16 1 31 0;
+#X connect 16 2 21 0;
+#X connect 16 3 22 0;
+#X connect 16 4 33 0;
+#X connect 16 5 32 0;
+#X connect 19 0 0 0;
+#X connect 20 0 1 0;
+#X connect 23 0 9 0;
+#X connect 24 0 8 0;
+#X connect 25 0 10 0;
+#X connect 34 0 3 0;
+#X connect 35 0 2 0;
+#X connect 36 0 4 0;
+#X connect 37 0 5 0;
+#X connect 38 0 7 0;
+#X connect 39 0 6 0;
+#X connect 40 0 11 0;
+#X coords 0 -1 1 1 770 36 2 100 472;
